@@ -1,8 +1,23 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <div id="subscriber-list-component">
+        <h3>WayKurat Subscribers </h3>
+        <div v-if="isViewReady == true">
+            <ol>
+                <li v-for="u in subscribers">
+                    {{ u.name }} - {{u.email}}
+                </li>
+            </ol>
+            <button class="btn btn-primary btn-block" v-on:click="refreshData">REFRESH</button>
+        </div> 
+        <div v-else>
+            <div>Loading data...</div>
+        </div>
+    </div>
 </div>
+@section Scripts{
+    <script src="~/lib/vue/vue.js"></script>
+    <script src="~/js/VueSubscriberListComponent.js"></script>
+}
