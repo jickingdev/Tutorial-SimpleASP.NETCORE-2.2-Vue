@@ -9,6 +9,15 @@
         "vue.min.js",
         "vue.js"
       ]
+    },
+    {
+      "provider": "cdnjs",
+      "library": "axios@0.18.0",
+      "destination": "wwwroot/lib/axios/",
+      "files": [
+        "axios.map",
+        "axios.js"
+      ]
     }
   ]
 }
